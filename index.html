@@ -1,0 +1,48 @@
+<html>
+	<head>	
+		<script src="zustand.js"></script>
+	</head>
+	<body>
+	<script>
+	</script>
+	<div id='main'>The current count is <span id='titleSpan'></span></div>
+	<h1 id='heading1'></h1>
+	<h2>HEADING 2 <span id='heading2'></span></h2>
+	<script>
+	let h1 = document.getElementById('heading1');
+	let h2 = document.getElementById('heading2');
+	let span = document.getElementById('titleSpan');
+
+	let z = new zustand();
+	const numberStore = z.create_store();
+	z.register_state(
+		numberStore, 
+		function(ctx, data) {
+			ctx.element.innerHTML = data;
+		}, 
+		{element: h1});
+	z.register_state(
+		numberStore, 
+		function(ctx, data) {
+			ctx.element.innerHTML = data;
+		}, 
+		{element: span});
+	z.register_state(
+		numberStore, 
+		function(ctx, data) {
+			ctx.element.innerHTML = data;
+		}, 
+		{element: h2});
+
+
+	const source = new EventSource('http://localhost:8000/unique/id/events');
+	source.addEventListener('message', message => {
+	z.updateState(numberStore, event.data);
+	});
+
+	</script>
+
+	</body>
+</html>
+
+
