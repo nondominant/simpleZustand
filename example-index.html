@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>	
+		<script src="router.js"></script>
+		<script src="rerunner.js"></script>
+		<script src="zustand.js"></script>
+		<link href="/dist/output.css" rel="stylesheet">
+		 <script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+	<div class='flex-auto'>
+	<button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded'><a id="test" class="heo" link='/profile'>LOGIN</a></button>
+	<button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded' ><a link='/admin'>admin</a></button>
+	<button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded' ><a link='/signup'>SIGN UP</a></button>
+	<button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded' onclick='pull()' >r.scrape() </button>
+	</div>
+
+	<script data-rerun="false">
+	// Client side atomic state storage
+
+	//let z = new zustand();
+	//const numberStore = z.create_store();
+	//z.register_state(
+	//	numberStore, 
+	//	function(ctx, data) {
+	//		ctx.element.innerHTML = data;
+	//	}, 
+	//	{element: h1});
+	//const source = new EventSource('http://localhost:8000/unique/id/events');
+	//source.addEventListener('message', message => {
+	//z.updateState(numberStore, event.data);
+//	});
+	</script>
+
+	<script>
+//	// Client side router
+//	async function fetchLink(event) {
+//		window.myRouter.fetchOnHover.call(window.myRouter, event);
+//	}
+//	async function followLink(event) {
+//	// use rerunner to scrape links on destination page
+//		if (!window.r || window.r === 'undefined'){
+//			r = new rerunner();
+//		}
+//		await r.scrape();
+//		myRouter.follow(event);
+//		r.run()
+//	}
+//	if (!window.myRouter || window.myRouter === 'undefined'){
+//		window.myRouter = new router();
+//	}
+//	window.links = document.querySelectorAll("a");
+//	for (let i = 0; i < links.length; i++) {
+//		try{
+//			links[i].addEventListener('mouseover', fetchLink);
+//			links[i].addEventListener('click', followLink);
+//		} catch {
+//			// could not attach event listener
+//		}
+//	}
+	</script>
+	<script src='clientSideRouterInjection.js' defer></script>
+	</body>
+</html>
+
+
